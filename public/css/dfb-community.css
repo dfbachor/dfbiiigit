@@ -1,0 +1,33 @@
+/**
+
+CSS related to the comuunity page
+
+*/
+
+.communityNoteImage {
+    width: 476px;
+    /* height: 150px; */
+
+}
+
+
+.communityCommentOnThisNote {
+    width:              100%;
+    background-color:   #e5f1e5;
+
+    -webkit-border-radius: 14px !important;
+        -moz-border-radius: 14px !important;
+            border-radius: 14px !important;
+    -webkit-border-top: 14px !important;
+        -moz-border-top: 14px !important;
+            border-top: 14px !important;
+    -webkit-border-bottom: 4px !important;
+        -moz-border-bottom: 4px !important;
+            border-bottom: 4px !important;
+}
+
+.communityNoteUserImage {
+    width: 30px;
+    height: 30px;
+
+}

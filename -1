@@ -1,0 +1,6 @@
+Log opened at 2018-04-04 01:50:05
+I: Connecting to configured address/port: localhost:9000.
+W: Creating socket for 'localhost:9000', poll success, but error: Operation now in progress (29).
+E: Could not connect to client. :-(
+Log closed at 2018-04-04 01:50:05
+

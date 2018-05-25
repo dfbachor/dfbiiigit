@@ -1,0 +1,20 @@
+/*
+David Bachor
+
+Css for header information
+
+
+*/
+
+.navbar, .navbar-header {
+    height:         40px;
+    min-height:     40px;
+}
+
+.navbar-nav > li > a, .navbar-header > a {
+    padding:        7px;
+}
+
+.navbar-header {
+    padding-right:  50px;
+}
