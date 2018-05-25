@@ -64,6 +64,6 @@ Route::get('/systemImage/{filename}', [
 ]);
 
 Route::get('/image/{filename}', [
-    'uses' => 'ApiController@getImage', 
+    'uses' => 'APIController@getImage', 
     'as' => 'image'
 ]);
