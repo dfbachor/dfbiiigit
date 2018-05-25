@@ -22,10 +22,8 @@ class UsersController extends Controller
      */
     public function index() 
     {
-
-       $user = DB::table('users');  //get()->where('id', $request->id)
-       
-        return view('users.index', compact('user'));
+        $users = User::where('systemID', app('system')->id)->get();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -48,8 +46,6 @@ class UsersController extends Controller
         //return($user);
         return view('users.edit')->with('user', $user);
 
-        //$user = DB::table('users')->get(['id', 'username', 'name', 'email', 'role'])->where('id', '=', $id);        
-        //return view('users.edit', compact('user'));    
     }
 
 
@@ -70,7 +66,7 @@ class UsersController extends Controller
             'role' => $request['role'],
             'password' => bcrypt($request['password']),
             'operatorUserName' => Auth::user()->username,
-            'imageFileName' => app('system')->imageFileName,
+            'imageFileName' => null,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString(),
         ]);
@@ -80,10 +76,7 @@ class UsersController extends Controller
             $file = $request->file('imageFile');
 
             if($file) {
-                //$destinationPath = 'uploads';
                 $filename = 'user' . '_' . app('system')->id . '_' . $newUser->id . '_' . $file->getClientOriginalName();
-                //$file->move($destinationPath, $filename);  
-                //$filename = $destinationPath . '/' . $filename;
 
                 $stored = Storage::disk('local')->put($filename, File::get($file));
 
@@ -109,9 +102,8 @@ class UsersController extends Controller
     public function destroy($id) 
     {
         $user = User::find($id);
-
         
-        Storage::delete();
+        Storage::delete($user->imageFileName);
 
         User::destroy($id);
         
@@ -120,10 +112,8 @@ class UsersController extends Controller
             ['entityID', '=', $id],
             ])->delete();
 
-        $user = DB::table('users');  //get()->where('id', $request->id)        
-
-        //return view('users.index', compact('user'));    
-        return Redirect::to('users')->with('user');
+        $users = User::where('systemID', app('system')->id)->get();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -132,12 +122,7 @@ class UsersController extends Controller
      */
     public function update(Request $request) 
     {
-       //print_r($_POST); 
-       //dd($request->all()); 
-       //dd($request->hasFile('imageFile'));
-       // dd($request['imageFile']);
-
-
+       
         $user = User::find($request['id']);
         
             $user->name = $request['name'];
@@ -160,7 +145,7 @@ class UsersController extends Controller
                     if($stored)
                         $user->imageFileName = $filename;
                     else
-                        $user->imageFileName = "file not stored";
+                        $user->imageFileName = null;
                     }                
             }
 

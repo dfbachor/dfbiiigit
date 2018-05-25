@@ -4,8 +4,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+
             <div class="panel panel-default">
-                <div class="panel-heading">Edit User</div>
+
+                    <div class="panel-heading">
+
+                        <div class="row">
+                                <div class="col-xs-4 text-left">
+                                        <a href="{{url()->previous()}}"><span class="glyphicon glyphicon-circle-arrow-left"></a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                        Edit User
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <a class='delete' href='/users/destroy/{{$user->id}}'>delete</a>
+                                </div>
+                        </div>
+                    </div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="/users/update" enctype="multipart/form-data">
@@ -76,7 +91,12 @@
                                 <input class="form-control" type="file" id="imageFile" name="imageFile" placeholder="Image File Name">
                             </div>
                             <div class="col-sm-2">	
-                                <img width="50" height="50" src="/image/{{$user->imageFileName}}" >
+                                {{-- <img width="50" height="50" src="/image/{{$user->imageFileName}}" > --}}
+                                @if($user['imageFileName'] == null || $user['imageFileName'] == "")
+                                    <img src="{{ route('image', ['filename' => app('system')->imageFileName]) }}" style="width: 35px; height: 35px" class="rounded imgPopup">
+                                @else
+                                    <img src="{{ route('image', ['filename' => $user['imageFileName']]) }}" style="width: 35px; height: 35px" class="rounded imgPopup">
+                                @endif
                             </div>
                         </div>
 

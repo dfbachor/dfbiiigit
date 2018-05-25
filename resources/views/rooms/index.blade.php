@@ -44,7 +44,7 @@
                 <div class="panel-heading col-sm-2" style="height: 50px; padding: 1px">
                     <a href='#' id="roomPhotoAnchor">					            	
                         {{-- <img class="companyLogo" id="roomPhoto" src="{{ app('system')->imageFileName }}" height='48' width='48'> --}}
-                        <img class="companyLogo" id="roomPhoto" src="/image/{{app('system')->imageFileName}}" height='48' width='48'>
+                        <img class="companyLogo" id="roomPhoto" src="{{ route('image', ['filename' => app('system')->imageFileName]) }}" height='48' width='48'>
 
                     </a> 
                 </div>
@@ -250,8 +250,8 @@
                 $("#imagePopupName").html("roomID: " + roomId);
                 $("#roomsDetailTitle").html("roomID: " + roomId);
 
-                roomImg = '{{ app('system')->imageFileName }}';
-                $("#roomPhoto").attr('src', roomImg + "?ghost=" + Math.random());
+                //roomImg = '{{ app('system')->imageFileName }}';
+                //$("#roomPhoto").attr('src', roomImg + "?ghost=" + Math.random());
                             
                 var myTable	= "<table class='table table-bordered table-condensed' >";
                     //myTable	+= "<tr>";

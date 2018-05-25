@@ -44,7 +44,7 @@
                 <div class="panel-heading col-sm-2" style="height: 50px; padding: 1px">
                     <a href='#' id="strainPhotoAnchor">					            	
                         {{-- <img class="companyLogo" id="strainPhoto" src="{{ app('system')->imageFileName }}" height='48' width='48'> --}}
-                        <img class="companyLogo" id="strainPhoto" src="/image/{{app('system')->imageFileName}}" height='48' width='48'>
+                        <img class="companyLogo" id="strainPhoto" src="{{ route('image', ['filename' => app('system')->imageFileName]) }}" height='48' width='48'>
                     </a> 
                 </div>
                 <div class="panel-heading col-sm-8" style="height: 50px;">
@@ -250,8 +250,8 @@
                 $("#imagePopupName").html("strainID: " + strainId);
                 $("#strainsDetailTitle").html("strainID: " + strainId);
 
-                strainImg = '{{ app('system')->imageFileName }}';
-                $("#strainPhoto").attr('src', strainImg + "?ghost=" + Math.random());
+                //strainImg = '{{ app('system')->imageFileName }}';
+                //$("#strainPhoto").attr('src', strainImg + "?ghost=" + Math.random());
                             
                 var myTable	= "<table class='table table-bordered table-condensed' >";
                     //myTable	+= "<tr>";

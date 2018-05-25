@@ -5,8 +5,20 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Add User</div>
+                    <div class="panel-heading">
 
+                            <div class="row">
+                                    <div class="col-xs-4 text-left">
+                                            <a href="{{url()->previous()}}"><span class="glyphicon glyphicon-circle-arrow-left"></a>
+                                    </div>
+                                    <div class="col-xs-4 text-center">
+                                            Add User
+                                    </div>
+                                    {{-- <div class="col-xs-4 text-right">
+                                            right User
+                                    </div> --}}
+                            </div>
+                        </div>
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="/users/store" enctype="multipart/form-data">
                         {{ csrf_field() }}

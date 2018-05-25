@@ -9,7 +9,7 @@ this window will not show until requested from the edit note link item -->
             	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-				<center><img id="imagePopupImage" height="450" width="450"></center>
+				<center><img id="imagePopupImage" ></center>
             </div>
 
             <div class="modal-footer">

@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Storage;
 
 class SystemsController extends Controller
 {
-    public function show(Request $request) 
+    public function edit(Request $request) 
     {
         // dd( app('system')->id); 
         //$system = DB::table('systems')->where('id', '=', app('system')->id)->get();
         //return view('system.show', compact('system'));
 
         $system = System::where('id', '=', app('system')->id)->get();
-        return view('system.show', ['system' => $system]);
+        return view('system.edit', ['system' => $system]);
 
     }
 
@@ -59,7 +59,7 @@ class SystemsController extends Controller
          $system->save();
 
          $system = DB::table('systems')->where('id', '=', $request['id'])->get();
-         return view('system.show', compact('system')); 
+         return view('system.edit', compact('system')); 
     }
 
     public function getSystemImage($filename) {

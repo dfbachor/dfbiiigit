@@ -11,12 +11,12 @@
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" id="systemForm" method="post" action="/system/update" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            <H1>Hello {{ $system[0]->companyName }}</H1>
+            
 
                             <div class="form-group">
                                 <label for="id" class="control-label col-sm-3">ID:</label> 
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="id" id="id" placeholder="id" value='{{ $system[0]->id }}' readonly="readonly">
+                                    <input type="hidden" class="form-control" name="id" id="id" placeholder="id" value='{{ $system[0]->id }}' readonly="readonly">
                                 </div>
                             </div>
 
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="col-sm-3">
                                     {{-- <img width="100" height="100" src="{{ app('system')->imageFileName }}" /> --}}
-                                    <img width="100" height="100" src="{{ route('system.image', ['filename' => $system[0]->imageFileName]) }}" alt="File type not an image" class="img-responsive">
+                                    <img class="img-rounded" width="100" height="100" src="{{ route('image', ['filename' => $system[0]->imageFileName]) }}" alt="File type not an image" class="img-responsive">
                                 </div>
                             </div>
 

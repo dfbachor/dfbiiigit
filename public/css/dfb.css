@@ -7,3 +7,12 @@ dfb.css
 */
 
 
+.panel-heading {
+    text-align: center;
+}
+
+/* .panel {
+    overflow: auto;
+} */
+
+

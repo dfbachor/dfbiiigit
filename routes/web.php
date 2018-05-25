@@ -55,7 +55,7 @@ Route::get('/plants/edit/{id}', 'PlantsController@edit')->name('plants.edit');
 Route::post('/plants/update', 'PlantsController@update')->name('plants.update');
 Route::get('/plants/destroy/{id}', 'PlantsController@destroy');
 
-Route::get('/system', 'SystemsController@show')->name('system');
+Route::get('/system', 'SystemsController@edit')->name('system.edit');
 Route::post('/system/update', 'SystemsController@update')->name('system.update');
 
 Route::get('/systemImage/{filename}', [

@@ -12,10 +12,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dfb.css') }}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">    <link href="{{ asset('css/dfb.css') }}" rel="stylesheet"> --}}
     
-    <link href="{{ asset('css/dfb-header.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dfb.css') }}" rel="stylesheet">
    
 
     @yield('styles') 
@@ -24,7 +23,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -99,7 +98,11 @@
         <!--   </div> -->
     </nav>
 
+    @include('imageModel')
+
+
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
             if('{{ Auth::user() ? Auth::user()->role : "u" }}' == 'a') {
@@ -108,6 +111,8 @@
                 $(".admin").hide();
             }
     </script>
+    <script src="/js/dfbiii.js"></script>
+
     @yield('javascripts')
 </body>
 </html>

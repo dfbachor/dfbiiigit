@@ -46,7 +46,7 @@
                 <div class="panel-heading col-sm-2" style="height: 50px; padding: 1px">
                     <a href='#' id="plantPhotoAnchor">					            	
                         {{-- <img class="companyLogo" id="plantPhoto" src="{{ route('system.image', ['filename' => app('system')->imageFileName]) }}" height='48' width='48'> --}}
-                        <img class="companyLogo" id="plantPhoto" src="/image/{{app('system')->imageFileName}}" height='48' width='48'>
+                        <img class="companyLogo" id="plantPhoto" src="{{ route('image', ['filename' => app('system')->imageFileName]) }}" height='48' width='48'>
                     </a> 
                 </div>
                 <div class="panel-heading col-sm-8" style="height: 50px;">

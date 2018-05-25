@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'maxPlantCount' => 25,
             'maxBatchCount' => 25,
             'maxBatchSize' => 25,
-            'imageFileName' => 'img/default.png',
+            'imageFileName' => null,
             'hits' => 0,
             'operatorUserName' => 'dfb',
         ]);
@@ -96,7 +96,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'role' => 'a',
             'email' => $data['email'],
-            'imageFileName' => 'img/default.png',
+            'imageFileName' => null,
             'password' => bcrypt($data['password']),
         ]);
     }
