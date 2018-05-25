@@ -19,6 +19,7 @@ class CreateNotesTable extends Migration
             $table->string('entityType');
             $table->integer('entityID');
             $table->integer('editingUserID');
+            $table->string('publish')->default('No');
             $table->text('note');
             $table->string('imageFileName')->nullable();
             $table->timestamps();            

@@ -48,7 +48,13 @@
                                 </div>
                                 <div class="col-sm-3">
                                     {{-- <img width="100" height="100" src="{{ app('system')->imageFileName }}" /> --}}
-                                    <img class="img-rounded" width="100" height="100" src="{{ route('image', ['filename' => $system[0]->imageFileName]) }}" alt="File type not an image" class="img-responsive">
+
+                                    @if($system[0]->imageFileName == null || $system[0]->imageFileName == "")
+                                        <img src="{{ route('image', ['filename' => 'system_1_1_default.png']) }}" style="width: 35px; height: 35px" class="img-rounded imgPopup img-responsive">
+                                    @else
+                                        <img src="{{ route('image', ['filename' => $system[0]->imageFileName]) }}" style="width: 35px; height: 35px" class="img-rounded imgPopup img-responsive">
+                                    @endif
+                                    
                                 </div>
                             </div>
 

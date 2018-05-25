@@ -36,10 +36,14 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <!-- {{ config('app.name', 'dfbiii') }} -->
+                        {{-- need to get the log inage working without changing the nvabar size --}}
+                        {{-- @if(app('system')->companyName == null || app('system')->companyName == "")
+                            <img src="{{ route('image', ['filename' => 'system_1_1_default.png']) }}" style="width: 35px; height: 35px" class="img-rounded imgPopup img-responsive">
+                        @else
+                            <img src="{{ route('image', ['filename' => app('system')->companyName]) }}" style="width: 35px; height: 35px" class="img-rounded imgPopup img-responsive">
+                        @endif --}}
+                    
                         {{ app('system')->companyName }}
-                        
-
                     </a>
                 </div>
 

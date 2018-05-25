@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
             'username' => 'daveb',
             'email' => 'dave@dfbiii.com',
             'password' => '$2y$10$ZA17u.DWt6eZuPNdJ2eAS.YEQ/3nEUBR.3KYVK2vJLDlcZy18Q9hC',
+            'imageFileName' => null,
             'role' => 'a',
         ]);
 
@@ -27,6 +28,7 @@ class UsersTableSeeder extends Seeder
             'systemID' => 2,
             'email' => 'demo@garden.com',
             'password' => bcrypt('demodemo'),
+            'imageFileName' => null,
             'role' => 'a',
         ]);
 
@@ -36,6 +38,7 @@ class UsersTableSeeder extends Seeder
             'username' => 'maxwellhouse',
             'email' => 'maxe@wellhouse.com',
             'password' => bcrypt('maxmax'),
+            'imageFileName' => null,
             'role' => 'u',
         ]);
 

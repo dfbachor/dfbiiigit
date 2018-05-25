@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'maxPlantCount' => 25,
             'maxBatchCount' => 25,
             'maxBatchSize' => 25,
-            'imageFileName' => null,
+            'imageFileName' => 'system_1_1_default.png',
             'hits' => 0,
             'operatorUserName' => 'dfb',
         ]);

@@ -24,7 +24,7 @@ class CreateSystemsTable extends Migration
             $table->integer('maxPlantCount');
             $table->integer('maxBatchCount');
             $table->integer('maxBatchSize');
-            $table->string('imageFileName', 256);
+            $table->string('imageFileName', 256)->nullable();
             $table->integer('hits');           
             $table->string('operatorUserName', 25);
             $table->timestamps();
