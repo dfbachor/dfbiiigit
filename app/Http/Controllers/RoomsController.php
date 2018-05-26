@@ -21,7 +21,11 @@ class RoomsController extends Controller
     //    $tasks = DB::table('tasks');  //get()->where('id', $request->id)
     //     return view('tasks.show', compact('tasks'));
 
-        return view('rooms.index');
+       // return view('rooms.index'); 
+
+        $rooms = Room::where('systemID', app('system')->id)->get();
+        return view('rooms.index', compact('rooms'));
+
     }
 
     /**
@@ -107,8 +111,6 @@ class RoomsController extends Controller
         
         $room->roomName = $request['roomName'];
         $room->lighting = $request['lighting'];
-        $room->hoursOfOperation = $request['hoursOfOperation'];
-        $room->exhaustType = $request['exhaustType'];
         $room->humidifier = $request['humidifier'];
         $room->comment = $request['roomInformation'];
         $room->operatorUserName = Auth::user()->username;

@@ -8,6 +8,6 @@ class Room extends Model
 {
     //
     protected $fillable = [
-        'systemID', 'roomName', 'lighting', 'hoursOfOperation', 'exhaustType', 'humidifier', 'operatorUserName', 'comment', 'created_at', 'updated_at', 
+        'systemID', 'roomName', 'lighting', 'exhaustType', 'humidifier', 'operatorUserName', 'comment', 'created_at', 'updated_at', 
     ];
 }

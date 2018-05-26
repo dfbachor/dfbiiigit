@@ -10,7 +10,20 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Add User</div>
+                    <div class="panel-heading">
+
+                        <div class="row">
+                                <div class="col-xs-4 text-left">
+                                        <a href="{{url()->previous()}}"><span class="glyphicon glyphicon-circle-arrow-left"></a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                        Edit Room
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <a class='delete' href='/rooms/destroy/{{$room->id}}'>delete</a>
+                                </div>
+                        </div>
+                    </div>
     
                     <div class="panel-body">
                         <form class="form-horizontal" role="form" id="roomForm" method="post" action="/rooms/update"> 
@@ -32,12 +45,6 @@
                                     </div> 
                                 </div>
                                 
-                                <div class="form-group">
-                                    <label for="hoursOfOperation" class="control-label col-sm-3">Hours Of Operation:<strong style="color:darkred;">*</strong></label> 
-                                    <div class="col-sm-9">	
-                                        <input value='{{ $room->hoursOfOperation }}' class="form-control" id="hoursOfOperation" name="hoursOfOperation" value="" placeholder="ex: 18 light/6 dark" data-error="Hours of operation is invalid">
-                                    </div> 
-                                </div>
                     
                                 <div class="form-group">
                                     <label for="exhaustType" class="control-label col-sm-3">Exhaust Type:<strong style="color:darkred;">*</strong></label> 
