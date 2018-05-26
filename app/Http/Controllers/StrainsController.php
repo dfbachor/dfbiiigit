@@ -21,8 +21,9 @@ class StrainsController extends Controller
     //    $tasks = DB::table('tasks');  //get()->where('id', $request->id)
     //     return view('tasks.show', compact('tasks'));
 
-        return view('strains.index');
-    }
+    $strains = Strain::where('systemID', app('system')->id)->get();
+    return view('strains.index', compact('strains'));
+}
 
     /**
      * Display a page to add a new user
@@ -111,10 +112,8 @@ class StrainsController extends Controller
             ['entityID', '=', $id],
             ])->delete();
 
-        $strains = DB::table('strains');  //get()->where('id', $request->id)        
-
-        //return view('users.index', compact('user'));    
-        return Redirect::to('strains')->with('strains');
-    }
+            $strains = Strain::where('systemID', app('system')->id)->get();
+            return view('strains.index', compact('strains'));
+        }
 
 }

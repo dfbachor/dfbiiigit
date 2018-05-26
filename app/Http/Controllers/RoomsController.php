@@ -57,7 +57,8 @@ class RoomsController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString(),
         ]);
 
-        return redirect('rooms');
+        $rooms = Room::where('systemID', app('system')->id)->get();
+        return view('rooms.index', compact('rooms'));
     }
 
     /**
@@ -117,7 +118,8 @@ class RoomsController extends Controller
         $room->updated_at = Carbon::now()->toDateTimeString();
         $room->save();
 
-        return redirect('rooms');
+        $rooms = Room::where('systemID', app('system')->id)->get();
+        return view('rooms.index', compact('rooms'));
     }
 
 
