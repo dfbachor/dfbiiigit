@@ -96,8 +96,9 @@ class StrainsController extends Controller
         $strain->updated_at = Carbon::now()->toDateTimeString();
         $strain->save();
 
-        return redirect('strains');
-    }
+        $strains = Strain::where('systemID', app('system')->id)->get();
+        return view('strains.index', compact('strains'));
+        }
 
     /**
      * Display a page to delete a new user
