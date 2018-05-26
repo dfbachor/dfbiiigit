@@ -31,7 +31,7 @@
                                 <div class="form-group">
                                     <label for="floweringTimeInDays" class="control-label col-sm-3">Flowering Time In Days:<strong style="color:darkred;">*</strong></label> 
                                     <div class="col-sm-9">	
-                                        <input class="form-control" id="floweringTimeInDays" name="floweringTimeInDays" value="" placeholder="flowering time in days" data-error="Flowering time in days is required">
+                                        <input type="number" class="form-control" id="floweringTimeInDays" name="floweringTimeInDays" value="" placeholder="flowering time in days" data-error="Flowering time in days is required">
                                     </div> 
                                 </div>
                             
