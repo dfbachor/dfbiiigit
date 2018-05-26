@@ -40,7 +40,7 @@
                                     <td>{{ $strain['strainName'] }}</td>
                                     <td>{{ $strain['floweringTimeInDays'] }}</td>
                                     <td>{{ $strain['testingStatus'] }}</td>
-                                    <td>{{ $strain['genetics'] }}</td>
+                                    <td style="width:100px">{{ $strain['genetics'] }}</td>
                                     <td>tbd</td>
                                     <td><a href='/strains/edit/{{ $strain['id'] }}'>Edit</a></td>
                                 </tr>
