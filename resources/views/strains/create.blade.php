@@ -43,7 +43,7 @@
                                 </div> 
                             </div>
 
-                            <input type="submit" class="btn btn-info" value="Add Strain">
+                            <input type="submit" class="btn btn-info" value="Add Plant Type">
 
                         </form>		
                     </div>
